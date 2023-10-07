@@ -18,7 +18,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         actions: const [Icon(Icons.search)],
@@ -26,7 +25,10 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text("My Bag"),
+           Padding(
+             padding: const EdgeInsets.symmetric(vertical: 20),
+             child: Text("My Bag", style: Theme.of(context).textTheme.headlineLarge,),
+           ),
           ProductsList(
             initItemCount: 1,
               image:
@@ -70,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Total Amount: "), 
-              // Text("${}")
+              Text("250\$")
               ],
           ),
           SizedBox(
